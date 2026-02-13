@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine's Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <section class="auth-screen" id="authScreen" aria-labelledby="authTitle">
+    <div class="auth-card">
+      <h2 id="authTitle">비밀번호를 입력해 주세요🤫</h2>
+      <p class="auth-subtitle">힌트: 우리가 처음 만난 날 몇 월 이었지? (비밀번호는 4자리)</p>
+      <label class="sr-only" for="passwordInput">비밀번호</label>
+      <input id="passwordInput" class="auth-input" type="password" placeholder="비밀번호 입력" autocomplete="off" />
+      <button id="unlockBtn" class="auth-btn" type="button">열어보기</button>
+      <p id="authMessage" class="auth-message" aria-live="polite"></p>
+    </div>
+    <p class="auth-watermark" aria-hidden="true">made by. 희연</p>
+  </section>
+
+  <div id="protectedContent" class="hidden">
+    <main class="container">
+      <h1><span class="title-heart" aria-hidden="true">♥</span> Happy Valentine's Day <span class="title-heart" aria-hidden="true">♥</span></h1>
+
+      <button id="envelopeBtn" class="envelope" aria-label="편지봉투 열기">
+        <svg class="envelope-icon" viewBox="0 0 220 150" aria-hidden="true">
+          <rect class="mail-body" x="8" y="8" width="204" height="134" rx="2" />
+          <path class="mail-flap" d="M8 8 L212 8 L118 72 Q110 80 102 72 Z" />
+          <polyline class="mail-line" points="8,142 92,78 110,92 128,78 212,142" />
+        </svg>
+        <span class="heart">❤</span>
+        <div class="fireworks" aria-hidden="true">
+          <span class="firework f1">💖</span>
+          <span class="firework f2">💝</span>
+          <span class="firework f3">🍫</span>
+          <span class="firework f4">🎁</span>
+          <span class="firework f5">🎉</span>
+          <span class="firework f6">🎊</span>
+          <span class="firework f7">✨</span>
+          <span class="firework f8">💗</span>
+          <span class="firework f9">🍬</span>
+          <span class="firework f10">🩷</span>
+        </div>
+      </button>
+
+      <p class="hint">나를 클릭해봐!</p>
+      <p class="from-signature">From. 희연</p>
+
+      <section id="surpriseSection" class="surprise hidden" aria-live="polite">
+        <h2>짠! 성민이만을 위한 깜짝 선물이야🥰</h2>
+        <p class="surprise-note">늘 내 곁에 있어줘서 고마워, 사랑해!</p>
+        <div class="image-grid">
+          <figure class="card" data-hover-label="편지">
+            <img class="preview-image" src="./assets/letter.png" alt="손편지 이미지" />
+          </figure>
+          <figure class="card" data-hover-label="기프티콘은 톡으로 전달해줄게!">
+            <img class="preview-image" src="./assets/gifticon.png" alt="기프티콘 이미지" data-modal-disabled="true" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <section id="imageModal" class="image-modal hidden" role="dialog" aria-modal="true" aria-label="이미지 크게 보기">
+      <div class="image-modal-content">
+        <button id="closeImageModalBtn" class="image-modal-close" aria-label="이미지 팝업 닫기">×</button>
+        <div class="modal-image-wrap">
+          <img id="imageModalImg" src="" alt="" />
+        </div>
+        <div class="image-modal-actions">
+          <button
+            id="downloadImageBtn"
+            type="button"
+            class="action-icon-btn"
+            data-tooltip="다운로드하기"
+            aria-label="다운로드하기"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v10" />
+              <path d="M8 10l4 4 4-4" />
+              <path d="M5 19h14" />
+            </svg>
+          </button>
+          <button
+            id="copyImageBtn"
+            type="button"
+            class="action-icon-btn"
+            data-tooltip="복사하기"
+            aria-label="복사하기"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="9" y="9" width="10" height="10" rx="2" />
+              <path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
+            </svg>
+          </button>
+        </div>
+        <p id="imageActionMessage" class="image-action-message" aria-live="polite"></p>
+      </div>
+    </section>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
